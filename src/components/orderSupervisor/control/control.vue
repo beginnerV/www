@@ -1,6 +1,7 @@
 <template>
 <el-card  class="home">
 <div class="title">跟单控制中心</div>
+<el-divider></el-divider>
 <div class="header">
    <div>
     <span>目标账户</span>
@@ -14,7 +15,7 @@
   </el-select>
   </div>
   <div>
-    <el-button @click="toggleSelection([tableData[1], tableData[2]])">增加跟踪任务</el-button>
+    <el-button @click="addTask()">增加跟踪任务</el-button>
     <el-button @click="toggleSelection()">启动</el-button>
     <el-button @click="toggleSelection()">停止</el-button>
     </div>
@@ -62,14 +63,20 @@
       >
     </el-table-column>
   </el-table>
+  <addTask :show.sync="show"></addTask>
 </el-card>
 </template>
 
 <script>
+import addTask from "./addTask"
 export default {
   name: 'Control',
+    components:{
+    addTask
+  },
 data() {
       return {
+        show:false,
           options: [{
           value: '选项1',
           label: '黄金糕'
@@ -118,7 +125,15 @@ data() {
         }],
         multipleSelection: []
       }
-  }
+  },
+  methods:{
+        addTask(){
+       this.show = true;
+        },
+        handleSelectionChange(){
+
+        }
+      }
 }
 </script>
 
@@ -132,7 +147,10 @@ data() {
     justify-content: space-between;
 }
 .title{
-    margin-bottom: 20px;
-    
+        text-align: left;
+}
+span{
+  font-size: 14px;
+  margin-right: 10px;
 }
 </style>

@@ -1,7 +1,8 @@
 <template>
 <el-card  class="home">
-<div class="title">持仓对齐</div>
-    <el-button @click="toggleSelection()">一键对齐</el-button>
+<el-tabs v-model="activeName" @tab-click="handleClick">
+    <el-tab-pane label="持仓对齐" name="first">
+      <el-button @click="toggleSelection()" class="btn">一键对齐</el-button>
   <el-table
     ref="multipleTable"
     :data="tableData"
@@ -45,6 +46,81 @@
       >
     </el-table-column>
   </el-table>
+    </el-tab-pane>
+    <el-tab-pane label="委托" name="second">
+        <el-table
+    ref="multipleTable"
+    :data="tableData"
+    tooltip-effect="dark"
+    style="width: 100%"
+    @selection-change="handleSelectionChange">
+    <el-table-column
+      label="交易所"
+      width="120">
+      <template slot-scope="scope">{{ scope.row.date }}</template>
+    </el-table-column>
+    <el-table-column
+      prop="name"
+      label="账户"
+      width="120">
+    </el-table-column>
+    <el-table-column
+      prop="address"
+      label="合约"
+      width="120"
+     >
+    </el-table-column>
+        <el-table-column
+      prop="name"
+      label="委托类型"
+      width="120">
+    </el-table-column>
+        <el-table-column
+      prop="name"
+      label="数量"
+      width="120">
+    </el-table-column>
+            <el-table-column
+      prop="name"
+      label="成交数量"
+      width="120">
+    </el-table-column>
+            <el-table-column
+      prop="name"
+      label="委托价格"
+      width="120">
+    </el-table-column>
+            <el-table-column
+      prop="name"
+      label="平均价格"
+      width="120">
+    </el-table-column>
+            <el-table-column
+      prop="name"
+      label="订单状态"
+      width="120">
+    </el-table-column>
+            <el-table-column
+      prop="name"
+      label="委托时间"
+      width="120">
+    </el-table-column>
+                <el-table-column
+      prop="name"
+      label="订单ID"
+      width="120">
+    </el-table-column>
+        <el-table-column
+      prop="name"
+      label="用户订单ID"
+      show-overflow-tooltip
+      >
+    </el-table-column>
+  </el-table>
+      
+      </el-tab-pane>
+  </el-tabs>
+    
 </el-card>
 </template>
 
@@ -53,6 +129,7 @@ export default {
   name: 'Align',
 data() {
       return {
+        activeName: 'first',
           options: [{
           value: '选项1',
           label: '黄金糕'
@@ -114,7 +191,8 @@ data() {
     display: flex;
     justify-content: space-between;
 }
-.title{
-    margin-bottom: 20px;
+
+.btn{
+  float: left;
 }
 </style>

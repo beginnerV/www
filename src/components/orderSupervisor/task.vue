@@ -1,6 +1,7 @@
 <template>
 <el-card class="home">
 <div class="title">跟单任务</div>
+<el-divider></el-divider>
 <div class="header">
    <div>
     <span>目标账户</span>
@@ -104,7 +105,7 @@
     </el-table-column>
         <el-table-column
       prop="name"
-      label="时间"
+      label="目标下单时间"
       show-overflow-tooltip
       >
     </el-table-column>
@@ -113,6 +114,7 @@
 </template>
 
 <script>
+
 export default {
   name: 'Control',
 data() {
@@ -178,6 +180,13 @@ data() {
     justify-content: space-between;
 }
 .title{
-    margin-bottom: 20px;
+        text-align: left;
+}
+span{
+  font-size: 14px;
+  margin-right: 10px;
+}
+div>span:nth-child(3){
+  margin-left: 15px;
 }
 </style>
