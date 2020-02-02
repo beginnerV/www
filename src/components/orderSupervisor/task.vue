@@ -13,7 +13,7 @@
       :value="item.value">
     </el-option>
   </el-select>
-      <span>跟随账户</span>
+    <span>跟随账户</span>
       <el-select v-model="value" placeholder="全部">
     <el-option
       v-for="item in options"
@@ -21,8 +21,10 @@
       :label="item.label"
       :value="item.value">
     </el-option>
-    <el-button @click="toggleSelection()">刷新</el-button>
   </el-select>
+  </div>
+  <div>
+    <el-button @click="toggleSelection()">刷新</el-button>
   </div>
 
 </div>
@@ -34,77 +36,77 @@
 >
     <el-table-column
       label="跟单任务"
-      width="120">
-      <template slot-scope="scope">{{ scope.row.date }}</template>
+      width="130">
+      <template slot-scope="scope">{{ scope.row.task }}</template>
     </el-table-column>
     <el-table-column
-      prop="name"
+      prop="contractID"
       label="合约ID"
-      width="120">
+      width="110">
     </el-table-column>
     <el-table-column
-      prop="address"
+      prop="direction"
       label="目标方向"
       width="120"
      >
     </el-table-column>
         <el-table-column
-      prop="name"
+      prop="price"
       label="目标价格"
       width="120">
     </el-table-column>
         <el-table-column
-      prop="name"
+      prop="targetQuantity"
       label="目标数量"
       width="120">
     </el-table-column>
           <el-table-column
-      prop="name"
+      prop="targetTurnover"
       label="目标成交量"
       width="120">
     </el-table-column>
           <el-table-column
-      prop="name"
+      prop="targetState"
       label="目标状态"
       width="120">
     </el-table-column>
           <el-table-column
-      prop="name"
+      prop="targetAccount"
       label="目标账户"
       width="120">
     </el-table-column>
           <el-table-column
-      prop="name"
+      prop="followAccount"
       label="跟随账户"
       width="120">
     </el-table-column>
               <el-table-column
-      prop="name"
+      prop="followQuantity"
       label="跟单数量"
       width="120">
     </el-table-column>
               <el-table-column
-      prop="name"
+      prop="followTurnover"
       label="跟单成交量"
       width="120">
     </el-table-column>
               <el-table-column
-      prop="name"
+      prop="orders"
       label="跟单挂单量"
       width="120">
     </el-table-column>
               <el-table-column
-      prop="name"
+      prop="followState"
       label="跟单状态"
       width="120">
     </el-table-column>
               <el-table-column
-      prop="name"
+      prop="orderNumber"
       label="目标订单号"
       width="120">
     </el-table-column>
         <el-table-column
-      prop="name"
+      prop="time"
       label="目标下单时间"
       show-overflow-tooltip
       >
@@ -121,49 +123,148 @@ data() {
       return {
           options: [{
           value: '选项1',
-          label: '黄金糕'
+          label: 'BitMEX-bitmex-ABC'
         }, {
           value: '选项2',
-          label: '双皮奶'
+          label: 'BitMEX-MT-ZJH'
         }, {
           value: '选项3',
-          label: '蚵仔煎'
+          label: 'BitMEX-BM11-TC'
         }, {
           value: '选项4',
-          label: '龙须面'
+          label: 'BitMEX-DC-KJ'
         }, {
           value: '选项5',
-          label: '北京烤鸭'
+          label: 'BitMEX-HT12-DF'
         }],
-        value: '',
+        value: 'BitMEX-bitmex-ABC',
         tableData: [{
-          date: '2016-05-03',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1518 弄'
+          // 跟单任务
+          task: 'ABC-BM9-ZXH-BTC',
+          // 合约ID
+          contractID: 'XBTUSD',
+          // 目标方向
+          direction: '买入',
+          // 目标价格
+          price: '8657',
+          // 目标数量
+          targetQuantity: '10298',
+          // 目标成交量
+          targetTurnover: '10298',
+          // 目标状态
+          targetState: '全部成交',
+          // 目标账户
+          targetAccount: 'bitmex-ABC',
+          // 跟随账户
+          followAccount: 'BM9-ZXH-BTC',
+          // 跟单数量
+          followQuantity: '3090',
+          // 跟单成交量
+          followTurnover: '3090',
+          // 跟单挂单量
+          orders: '0',
+          // 跟单状态
+          followState: '已完成',
+          // 目标订单号
+          orderNumber: '4cc711aa76hff78711',
+          // 目标下单时间
+          time: '2020-02-02'
         }, {
-          date: '2016-05-02',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1518 弄'
+          task: 'ABC-BM8-HK',
+          contractID: 'XBTUSD',
+          direction: '买入',
+          price: '8657',
+          targetQuantity: '10298',
+          targetTurnover: '10298',
+          targetState: '全部成交',
+          targetAccount: 'bitmex-ABC',
+          followAccount: 'BM9-ZXH-BTC',
+          followQuantity: '3090',
+          followTurnover: '3090',
+          orders: '0',
+          followState: '已完成',
+          orderNumber: '4cc711aa76hff78711',
+          time: '2020-02-02'
         }, {
-          date: '2016-05-04',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1518 弄'
+          task: 'ABC-BM7',
+          contractID: 'XBTUSD',
+          direction: '买入',
+          price: '8657',
+          targetQuantity: '10298',
+          targetTurnover: '10298',
+          targetState: '全部成交',
+          targetAccount: 'bitmex-ABC',
+          followAccount: 'BM9-ZXH-BTC',
+          followQuantity: '3090',
+          followTurnover: '3090',
+          orders: '0',
+          followState: '已完成',
+          orderNumber: '4cc711aa76hff78711',
+          time: '2020-02-02'
         }, {
-          date: '2016-05-01',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1518 弄'
+          task: 'ABC-BM9-ZXH-BTC',
+          contractID: 'XBTUSD',
+          direction: '买入',
+          price: '8657',
+          targetQuantity: '10298',
+          targetTurnover: '10298',
+          targetState: '全部成交',
+          targetAccount: 'bitmex-ABC',
+          followAccount: 'BM9-ZXH-BTC',
+          followQuantity: '3090',
+          followTurnover: '3090',
+          orders: '0',
+          followState: '已完成',
+          orderNumber: '4cc711aa76hff78711',
+          time: '2020-02-02'
         }, {
-          date: '2016-05-08',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1518 弄'
+          task: 'ABC-BM9-ZXH-BTC',
+          contractID: 'XBTUSD',
+          direction: '买入',
+          price: '8657',
+          targetQuantity: '10298',
+          targetTurnover: '10298',
+          targetState: '全部成交',
+          targetAccount: 'bitmex-ABC',
+          followAccount: 'BM9-ZXH-BTC',
+          followQuantity: '3090',
+          followTurnover: '3090',
+          orders: '0',
+          followState: '已完成',
+          orderNumber: '4cc711aa76hff78711',
+          time: '2020-02-02'
         }, {
-          date: '2016-05-06',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1518 弄'
+          task: 'ABC-BM9-ZXH-BTC',
+          contractID: 'XBTUSD',
+          direction: '买入',
+          price: '8657',
+          targetQuantity: '10298',
+          targetTurnover: '10298',
+          targetState: '全部成交',
+          targetAccount: 'bitmex-ABC',
+          followAccount: 'BM9-ZXH-BTC',
+          followQuantity: '3090',
+          followTurnover: '3090',
+          orders: '0',
+          followState: '已完成',
+          orderNumber: '4cc711aa76hff78711',
+          time: '2020-02-02'
         }, {
-          date: '2016-05-07',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1518 弄'
+          task: 'ABC-BM9-ZXH-BTC',
+          contractID: 'XBTUSD',
+          direction: '买入',
+          price: '8657',
+          targetQuantity: '10298',
+          targetTurnover: '10298',
+          targetState: '全部成交',
+          targetAccount: 'bitmex-ABC',
+          followAccount: 'BM9-ZXH-BTC',
+          followQuantity: '3090',
+          followTurnover: '3090',
+          orders: '0',
+          followState: '已完成',
+          orderNumber: '4cc711aa76hff78711',
+          time: '2020-02-02'
         }],
         multipleSelection: []
       }
