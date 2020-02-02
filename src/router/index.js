@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Index from '@/components/orderSupervisor/index.vue'
+import futures from '@/components/futures/index.vue'
+import contract from "@/components/contract/index"
 
 Vue.use(Router)
 
@@ -8,8 +9,13 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'Index',
-      component: Index
+      name: 'futures',
+      component: futures
+    },
+    {
+      path:"/contract",
+      name:"contract",
+      component:contract
     }
   ]
 })
