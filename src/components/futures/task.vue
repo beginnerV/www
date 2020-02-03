@@ -5,16 +5,7 @@
 <div class="header">
    <div>
     <span>目标账户</span>
-      <el-select v-model="value" placeholder="全部">
-    <el-option
-      v-for="item in options"
-      :key="item.value"
-      :label="item.label"
-      :value="item.value">
-    </el-option>
-  </el-select>
-    <span>跟随账户</span>
-      <el-select v-model="value" placeholder="全部">
+      <el-select v-model="value" placeholder="全部" style="width:180px;">
     <el-option
       v-for="item in options"
       :key="item.value"
@@ -24,9 +15,20 @@
   </el-select>
   </div>
   <div>
-    <el-button @click="toggleSelection()">刷新</el-button>
+    <span>跟随账户</span>
+      <el-select v-model="value" placeholder="全部" style="width:180px;">
+    <el-option
+      v-for="item in options"
+      :key="item.value"
+      :label="item.label"
+      :value="item.value">
+    </el-option>
+  </el-select>
   </div>
-
+  <div>
+<el-button>刷新</el-button>
+  </div>
+    
 </div>
   <el-table
     ref="multipleTable"

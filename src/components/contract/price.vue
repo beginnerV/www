@@ -3,6 +3,8 @@
    <el-table
     ref="multipleTable"
     :data="tableData"
+    :cell-style="cellStyle"
+    :row-style="rowStyle"
     tooltip-effect="dark"
     style="width: 100%"
     max-height="400"
@@ -11,7 +13,9 @@
         <el-table-column
       prop="pay"
       label=""
-      width="80">
+      width="80"
+
+      >
     </el-table-column>
     <el-table-column
       label="价格（USD）"
@@ -26,7 +30,6 @@
     <el-table-column
       prop="address"
       label="订单数量（笔）"
-      width="120"
      >
  </el-table-column>
   </el-table>
@@ -73,7 +76,7 @@ data(){
           pay: '卖1',
         },
             {
-          pay: '一',
+          pay: ' ',
         },
             {
           pay: '买10',
@@ -105,18 +108,31 @@ data(){
             {
           pay: '买1',
         },
-            {
-          pay: '买1',
-        },
         ]
     }
-}
+},methods:{
+cellStyle({ row, column, rowIndex, columnIndex }) {
+      if (columnIndex === 0) {
+        return 'color: #909399;font-weight: bold;'
+      } else {
+        return ''
+      }
+
+    },
+    rowStyle({row,rowIndex}){
+        if (rowIndex === 11) {
+        return {"background-color": "green"}
+      } else {
+        return ''
+      }
+    }
+},
 }
 </script>
 
 <style scoped>
 .card{
-    width: 45%;
+    width: 48%;
 }
 
 </style>

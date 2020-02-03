@@ -2,8 +2,8 @@
   <div class="home">
 <account/>
 <price/>
-<kLine/>
 <business/>
+<kLine/>
 <type/>
 <entrust/>
   </div>
@@ -34,5 +34,9 @@ export default {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content:space-around;
+}
+.home>div{
+  margin-bottom: 20px;
 }
 </style>

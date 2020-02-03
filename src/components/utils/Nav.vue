@@ -12,7 +12,7 @@
   >
   <el-menu-item index="/">期货交易</el-menu-item>
   <el-menu-item index="/contract">合约交易</el-menu-item>
-  <el-menu-item index="3">账户资产</el-menu-item>
+  <el-menu-item index="/property">账户资产</el-menu-item>
 </el-menu>
   </div>
 </template>
