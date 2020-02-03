@@ -53,7 +53,7 @@ export default {
 
 <style scoped>
 .card{
-    width: 48%;
+    width: 31%;
     height: 400px;
 }
 .font{

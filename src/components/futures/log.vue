@@ -3,7 +3,7 @@
 <div class="title">运行日志</div>
 <el-divider></el-divider>
 <div class="content">
-<p>日志</p>
+<p>日志日志日志日志日志日志日志日志日志日志日志日志日志日志日志日志日志日志日志日志日志日志日志日志日志日志日志日志</p>
 <p>日志</p>
 <p>日志</p>
 <p>日志</p>
@@ -56,7 +56,7 @@ export default {
 }
 .content{
    height: 540px;
-     overflow:scroll;
+     overflow-y:scroll;
      border: 1px solid gray;
 }
 .title{
